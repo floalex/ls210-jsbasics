@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Pattern Generation(less than 10)</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    function generatePattern(n) {
+      var string;
+      
+      for (var i = 1; i <= n; i++) {
+        string = '';
+        for (var j = 1; j <= i; j++) {
+          string += String(j);
+        }
+        
+        for (var k = i + 1; k <= n; k++) {
+          string += '*';
+        }
+        
+        console.log(string);
+      }
+    }
+    
+    generatePattern(7);
+    
+    // console output
+    // 1******
+    // 12*****
+    // 123****
+    // 1234***
+    // 12345**
+    // 123456*
+    // 1234567
+    
+    generatePattern(20);
+    </script>
+  </body>
+</html>

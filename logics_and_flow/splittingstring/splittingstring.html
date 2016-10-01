@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Splitting a String</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function splitString(string, delimiter) {
+        var tempString = '';
+        
+        for (var i = 0; i < string.length; i++) {
+          if (string[i] == delimiter) {
+            console.log(tempString);
+            tempString= '';
+          } else if (delimiter === '') {
+            console.log(string[i]);
+          } else {
+            tempString += string[i];
+          }
+        }
+        
+        if (tempString) {
+          console.log(tempString);
+        }
+      }
+      
+      splitString('abc,123,hello world', ',');
+      // logs out:
+      // abc
+      // 123
+      // hello world
+      
+      splitString('hello');
+      // logs out:
+      // hello
+      
+      splitString('hello', '');
+      // logs out:
+      // h
+      // e
+      // l
+      // l
+      // o
+      
+      splitString('hello', ';');
+      // logs out:
+      // hello
+      
+      splitString(';hello;', ';');
+      // logs out:
+
+      // hello
+    </script>
+  </body>
+</html>

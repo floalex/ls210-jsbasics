@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Greatest Common Divisor</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    function gcd(num1, num2) {
+      if (num1 > num2) {
+        while (num2 !== 0) {
+          var temp = num2;
+          num2 = num1 % num2;
+          num1 = temp;
+        }
+        
+        return num1;
+      }
+      
+      if (num2 > num1) {
+        while (num1 !== 0) {
+          var temp = num1;
+          num1 = num2 % num1;
+          num2 = temp;
+        }
+        
+        return num2;
+      }
+      
+      if (num1 === num2) {
+        return num1;
+      }
+    }
+    
+    console.log(gcd(12, 4));   // 4
+    console.log(gcd(15, 10));  // 5
+    console.log(gcd(9, 2));    // 1
+    
+    console.log(gcd(12, gcd(4, 8)));   // 4
+    console.log(gcd(15, gcd(30, 45))); // 15
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Repeating Strings</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // first attemp:
+      // function repeat(string, times) {
+      //   if (times < 0 || isNaN(times)) {
+      //     return undefined;
+      //   }
+        
+      //   if (times === 0) {
+      //     return "";
+      //   }
+        
+      //   if (times >= 1) {
+      //     var newString = string;
+          
+      //     for(var i = 1; i <= times - 1; i++) {
+      //       newString += string;
+      //     }
+          
+      //     return newString;
+      //   }
+      // }
+      
+      // suggested solution
+      function repeat(string, times) {
+        var repeated = '';
+        
+        if (times < 0 || isNaN(times)) {
+          return undefined;
+        }
+        
+        for (var i = 0; i < times; i++) {
+          repeated += string;
+        }
+        
+        return string;
+      }
+      
+      repeat('abc', 1);    // "abc"
+      repeat('abc', 2);    // "abcabc"
+      repeat('abc', -1);   // undefined
+      repeat('abc', 0);    // ""
+      repeat('abc', 'a');  // undefined
+    </script>
+  </body>
+</html>

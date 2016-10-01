@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Substring (2)</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function substring(string, start, end) {
+        var newString = '';
+        var temp;
+        
+        if (end === undefined || end > string.length) {
+          end = string.length;
+        }
+        
+        if (start > string.length) {
+          start = string.length;
+        }
+        
+        if (end < 0 || isNaN(end)) {
+          end = 0;
+        }
+        
+        if (start < 0 || isNaN(start)) {
+          start = 0;
+        }
+        
+        if (start > end) {
+          temp = start;
+          start = end;
+          end = temp;
+        }
+        
+        for (var i = start; i < end; i++) {
+          newString += string[i];
+        }
+        
+        return newString;
+      }
+      
+      var string = 'hello world';
+      
+      console.log(substring(string, 2, 4));    // "ll"
+      console.log(substring(string, 4, 2));    // "ll"
+      console.log(substring(string, 0, -1));   // ""
+      console.log(substring(string, 2));       // "llo world"
+      console.log(substring(string, 'a'));     // "hello world"
+      console.log(substring(string, 8, 20));   // "rld"
+    </script>
+  </body>
+</html>

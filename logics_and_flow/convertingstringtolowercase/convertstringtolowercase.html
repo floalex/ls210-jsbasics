@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Converting Strings to Lower Case</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function toLowerCase(string) {
+        var lowerString = '';
+        var charCode;
+        
+        for (var i = 0; i < string.length; i++) {
+          charCode = string.charCodeAt(i);   
+          
+          if (charCode >= 65 && charCode <= 90) {
+            charCode += 32;  
+          }
+          
+          lowerString += String.fromCharCode(charCode);
+        }
+        
+        return lowerString;        
+      }
+      
+      toLowerCase('ALPHABET');      // "alphabet"
+      toLowerCase('123');           // "123"
+      toLowerCase('abcDEF');        // "abcdef"
+    </script>
+  </body>
+</html>

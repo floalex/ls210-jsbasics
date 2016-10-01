@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>ROT13 Cipher</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    function rot13(message){
+      var rotMessage = '';
+      var charCode;
+      
+      for (var i = 0; i < message.length; i++) {
+        charCode = message.charCodeAt(i);   
+        
+        if ((charCode >= 65 && charCode <= 77) || (charCode >= 97 && charCode <= 109)) {
+          charCode += 13;  
+        } else if (charCode >= 78 && charCode <= 90) {
+          charCode -= 13;  
+        } else if (charCode >= 110 && charCode <= 122) {
+          charCode -= 13; 
+        }
+        
+        rotMessage += String.fromCharCode(charCode);
+      }
+      
+      return rotMessage;
+    }
+    
+    console.log(rot13('Teachers open the door, but you must enter by yourself.'));
+
+    // prints:
+    // Grnpuref bcra gur qbbe, ohg lbh zhfg ragre ol lbhefrys.
+    console.log(rot13(rot13('Teachers open the door, but you must enter by yourself.')));
+    
+    console.log(rot13(rot13("ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$ %^&*()")));
+    </script>
+  </body>
+</html>

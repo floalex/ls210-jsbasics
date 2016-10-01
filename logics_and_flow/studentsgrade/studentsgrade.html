@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Students Grade</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var score1 = Number(prompt('Enter score 1:'));
+      var score2 = Number(prompt('Enter score 2:'));
+      var score3 = Number(prompt('Enter score 3:'));
+      var totalScore = [score1, score2, score3];
+      
+      function sum(totalScore) {
+        var sum = 0;
+        for (var i = 0; i < totalScore.length; i++) {
+          sum += totalScore[i];
+        }
+        return sum;
+      }
+      
+      function average(totalScore) {
+        return sum(totalScore) / totalScore.length;
+      }
+      
+      // if (average(totalScore) >= 90) {
+      //   console.log('Based on the average of your 3 scores your letter grade is \'' + 'A\'');
+      // }
+      
+      // if (average(totalScore) < 90 && average(totalScore) >= 70) {
+      //   console.log('Based on the average of your 3 scores your letter grade is \'' + 'B\'');
+      // }
+      
+      // if (average(totalScore) < 70 && average(totalScore) >= 50) {
+      //   console.log('Based on the average of your 3 scores your letter grade is \'' + 'C\'');
+      // }
+      
+      // if (average(totalScore) < 50) {
+      //   console.log('Based on the average of your 3 scores your letter grade is \'' + 'F\'');
+      // }
+      
+      
+     
+    </script>
+  </body>
+</html>

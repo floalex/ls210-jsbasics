@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>	Trimming Empty Spaces</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    function trim(str) {
+      var trimmed = trimLeft(str);
+      trimmed = trimRight(trimmed);
+      
+      return trimmed;
+    }
+    
+    function trimLeft(str) {
+      var trimStr = '';
+      var copyMode = false;
+      
+      for (var i = 0; i < str.length; i++) {
+        if (str[i] !== ' ') {
+          copyMode = true;
+        }
+        
+        if (copyMode) {
+          trimStr += str[i];
+        }
+      }
+      
+      return trimStr;
+    }
+    
+    function trimRight(str) {
+      var trimStr = '';
+      var copyMode = false;
+      
+      for (var i = str.length - 1; i >= 0 ; i--) {
+        if (str[i] !== ' ') {
+          copyMode = true;
+        }
+        
+        if (copyMode) {
+          trimStr = str[i] + trimStr;
+        }
+      }
+      
+      return trimStr;
+    }
+    
+    console.log(trim('  abc  '));  // "abc"
+    console.log(trim('abc   '));   // "abc"
+    console.log(trim(' ab c'));    // "ab c"
+    console.log(trim(' a b  c'));  // "a b  c"
+    console.log(trim('      '));   // ""
+    console.log(trim(''));         // ""
+    
+    </script>
+  </body>
+</html>
