@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Building Strings</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var paragraph = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sed \
+                ligula at risus vulputate faucibus. Aliquam venenatis nibh ut justo dignissim \
+                dignissim. Proin dictum purus mollis diam auctor sollicitudin. Ut in bibendum \
+                ligula. Suspendisse quam ante, dictum aliquam tristique id, porttitor pulvinar \
+                diam. Maecenas blandit aliquet ipsum. Integer vitae sapien sed nulla rutrum \   
+                hendrerit ac a urna. Interdum et malesuada fames ac ante ipsum primis in faucibus.';
+
+      console.log(paragraph);
+               
+    // It has a syntax error in var paragraph above. This is caused by the extra spaces at the end of line 13 after the '\'. 
+    // The backslash character '\' is used when followed by the letter n to include a newline character. With the extra 
+    // spaces, the 'SyntaxError: Invalid or unexpected token' occurred.
+    
+    // The code also has a bug even after we remove the extra spaces at the end of line13. Since the whole string is considered to be contiuous, 
+    // the extra spaces at the beginning of each line (line 9 to line 14) is counted as part of the string.
+    
+    </script>
+  </body>
+</html>
