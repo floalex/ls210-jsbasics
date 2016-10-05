@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Accessing Global</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+    var myVar = 'This is global';
+
+    function someFunction() {
+      myVar = 'This is local';
+    }
+    
+    someFunction();
+    
+    console.log(myVar);
+    // It prints out 'This is local'. In the function, myVar is the global variable and is changed to a different value with the assignment within the function.
+    </script>
+  </body>
+</html>

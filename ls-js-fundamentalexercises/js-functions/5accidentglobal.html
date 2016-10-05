@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Accidentally Global</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+    function someFunction() {
+      myVar = 'This is global';
+    }
+    
+    someFunction();
+    console.log(myVar);
+    
+    // It prints out 'This is global'. If a variable is initialized without first being declared anywhere with the var keyword,
+    // it is automatically added to the global context and it is thus a global variable.
+    </script>
+  </body>
+</html>

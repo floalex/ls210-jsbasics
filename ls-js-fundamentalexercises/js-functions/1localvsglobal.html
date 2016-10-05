@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Local vs Global</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+      var myVar = 'This is global';
+
+      function someFunction() {
+        var myVar = 'This is local';
+      }
+      
+      someFunction();
+      
+      console.log(myVar);
+     
+     //It prints out "This is global". This is becuase the myVar in someFunction is local variable, it can't change the global variable myVar outside of the function. 
+
+    </script>
+  </body>
+</html>

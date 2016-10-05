@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Variable Lookup</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+    var myVar = 'This is global';
+
+    function someFunction() {
+      console.log(myVar);
+    }
+    
+    someFunction();
+  
+    // It prints out 'This is global'. JavaScript will first look up variable named myVar locally in function. When the local variable is not available,
+    // then it looks up the outer scope, until it finds the variable before or in global scope. In this code, it finds and uses the value in global scope.
+    </script>
+  </body>
+</html>

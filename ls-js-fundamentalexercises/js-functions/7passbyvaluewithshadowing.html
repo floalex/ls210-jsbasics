@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Pass by Value with Shadowing</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+    var a = 7;
+
+    function myValue(a) {
+      a += 10;
+    }
+    
+    myValue(a);
+    console.log(a);
+    
+    // It prints out 7. 'a' inside the function is local variable to the function since parameters of 
+    // a funtion are considered local variables in JavaScript. Thus the global var 'a' is not affected.
+    </script>
+  </body>
+</html>

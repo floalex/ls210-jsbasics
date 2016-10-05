@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Shadowing</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // What will the following code print and why? Don't run the code until you have tried to answer.
+      var myVar = 'This is global';
+
+      function someFunction() {
+        var myVar = 'This is local';
+        console.log(myVar);
+      }
+      
+      someFunction();
+      
+      // This time it will print out "This is local". Variables declared within a function are local variables and are only accessible within that function. 
+      // The variable declaration for myVar in someFunction shadows the outer myVar variable.
+      // Thus when we call the function, only the inner myVar is accessed.
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Pass by Value</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+    var a = 7;
+
+    function myValue(b) {
+      b += 10;
+    }
+    
+    myValue(a);
+    console.log(a);
+    
+    // It prints out 7. Reassigning value to the local variable b within the function is irrelevant to the outer variable a, 
+    // even we pass in a variable. Therefore a value remains the same.
+    </script>
+  </body>
+</html>
