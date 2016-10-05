@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Arithmetric Integer</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // var number1 = prompt('Enter the first number:');
+      // var number2 = prompt('Enter the second number:');
+      
+      // console.log(number1 + ' + ' + number2 + ' = ' + (number1 + number2));
+      // console.log(number1 + ' - ' + number2 + ' = ' + (number1 - number2));
+      // console.log(number1 + ' * ' + number2 + ' = ' + (number1 * number2));
+      // console.log(number1 + ' / ' + number2 + ' = ' + Math.floor(number1 / number2));
+      // console.log(number1 + ' % ' + number2 + ' = ' + (number1 % number2));
+      // console.log(number1 + ' ** ' + number2 + ' = ' + Math.pow(number1, number2));
+      
+      // The above code won't work as expect since the user's input is always going to be captured as a string.
+      // We have to convert the input ourselves in order to use numbers. One way to fix it:
+      
+      var number1 = Number(prompt('Enter the first number:'));
+      var number2 = Number(prompt('Enter the second number:'));
+      
+      console.log(number1 + ' + ' + number2 + ' = ' + (number1 + number2));
+      console.log(number1 + ' - ' + number2 + ' = ' + (number1 - number2));
+      console.log(number1 + ' * ' + number2 + ' = ' + (number1 * number2));
+      console.log(number1 + ' / ' + number2 + ' = ' + Math.floor(number1 / number2));
+      console.log(number1 + ' % ' + number2 + ' = ' + (number1 % number2));
+      console.log(number1 + ' ** ' + number2 + ' = ' + Math.pow(number1, number2));
+    </script>
+  </body>
+</html>

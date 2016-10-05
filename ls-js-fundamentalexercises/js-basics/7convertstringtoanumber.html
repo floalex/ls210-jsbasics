@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Convert String to a Number</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function stringToInteger(string) {
+        var value = 0;
+        var charCode;
+        var numOffset = 48; // char 0 is at ascii 48
+        
+        for (var i = 0; i < string.length; i++) {
+          // http://www.asciitable.com/
+          charCode = string.charCodeAt(i);
+
+          var digit = charCode - numOffset;
+          
+          value = value * 10 + digit;
+        }
+        
+        return value;
+      }
+      
+      console.log(stringToInteger('4321'));          // 4321
+      console.log(stringToInteger('570'));           // 570
+    </script>
+  </body>
+</html>

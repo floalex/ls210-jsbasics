@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Convert a Number to a String</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    function integerToString(num) {
+      var string = '';
+      var numOffset = 48; // char 0 is at ascii 48; http://www.asciitable.com/
+      
+      // the do...while loop iterates at least once and reiterates until the condition is no longer true
+      do {
+        string = String.fromCharCode(num % 10 + numOffset) + string;  //use num%10 to get the last digit of number passed in
+        num = Math.floor(num / 10);
+      } while (num > 0);
+      
+      return string;
+    } 
+    
+    console.log(integerToString(4321));    // "4321"
+    console.log(integerToString(0));       // "0"
+    console.log(integerToString(5000));    // "5000"
+    </script>
+  </body>
+</html>

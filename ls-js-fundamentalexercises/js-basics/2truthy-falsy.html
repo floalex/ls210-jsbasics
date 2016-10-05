@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Truthy Falsey</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var myBoolean = true;
+      var myString = 'hello';
+      var myArray = [];
+      var myOtherString = '';
+      
+      if (myBoolean) {
+        console.log('Hello');
+      }
+      
+      if (!myString) {
+        console.log('World');
+      }
+      
+      if (!!myArray) {
+        console.log('World');
+      }
+      
+      if (myOtherString || myArray) {
+        console.log('!');
+      }
+      
+      // Line 15: 'Hello'
+      // Line 19:
+      // Line 23: 'World'
+      // Line 27: '!'
+      
+      // Line15, 23 and 27 log out values as myBoolean and myArray are considered truthy.
+      // Note that myString is considered truthy, but when we add '!'(logical not) before it, it returns false thus log19 doesn't log out string. 
+        
+      // Javascript will treat values 'truthy' except for below 6 values:
+      // - false;
+      // - null;
+      // - undefined;
+      // - 0;
+      // - NaN;
+      // - '';
+      
+    </script>
+  </body>
+</html>

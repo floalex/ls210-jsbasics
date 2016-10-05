@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Counting the Number of Characters</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+     var input = prompt('Please write word or multiple words:');
+
+     //  The g character means to repeat the search through the entire string.  //
+     var newInput = input.replace(/ /g, '');
+      
+     var numberOfCharacters = newInput.length;
+      
+     console.log('There are ' + numberOfCharacters + ' characters in \"' + input + '\".');
+    </script>
+  </body>
+</html>

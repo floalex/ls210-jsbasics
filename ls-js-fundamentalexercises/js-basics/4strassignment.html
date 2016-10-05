@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>String Assignment</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // What does this print out? And why?
+      var name = 'Bob';
+      var saveName = name;
+      name.toUpperCase();
+      console.log(name, saveName);
+      
+      // It prints out Bob Bob. This is due to the fact that string is primitive type in JavaScript and can not be mutated.
+      // name.toUpperCase() does not affect the string itself, it returns a new string BOB.
+    </script>
+  </body>
+</html>

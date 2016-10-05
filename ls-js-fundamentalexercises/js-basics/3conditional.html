@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Conditional</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // One of the ways to manage the flow of a program is through the use of conditionals. 
+    // Go over the code below and specify how many possible flows/paths there are.
+      if (condition1) {
+        // some code
+        if (condition2) {
+          // some code
+        } else {
+          // some code
+        }
+      } else {
+        // some code
+        if (condition4) {
+          // some code
+          if (condition5) {
+          // some code
+          }
+        }
+      }
+      
+      // There are 5 paths in above code.
+      // Path1: condition1 - condition2
+      // Path2: condition1 - not condition2 (the else statement in condition1)
+      // Path3: not condition1 (the else statement in line 18)
+      // Path4: not condition1 - condition4
+      // Path5: not condition1 - condition4 - condition5
+    </script>
+  </body>
+</html>
