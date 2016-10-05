@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Copy 1</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Read through the code given below. What will be logged to the console at lines 5 and 8? Try thinking about what the results will be 
+    // before trying out the code. Explain the results.
+      var myArray = [1, 2, 3, 4];
+      var myOtherArray = myArray;
+      
+      myArray.pop();
+      console.log(myOtherArray);
+      
+      myArray = [1, 2];
+      console.log(myOtherArray);
+      
+      // It prints out "Hello, world!". JavaScript also hoists functions declarations.
+      // The above code is actually equal to:
+      // function displayValue() {
+      //   console.log('Hello, world!');
+      // }
+    
+      // displayValue();
+      // Note that unlike variable hoisting, the whole function is moved to the top completely and we can call before it is declared.
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Hoisting Functions</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+      displayValue();
+
+      function displayValue() {
+        console.log('Hello, world!');
+      }
+      
+      // It prints out "Hello, world!". JavaScript also hoists functions declarations.
+      // The above code is actually equal to:
+      // function displayValue() {
+      //   console.log('Hello, world!');
+      // }
+    
+      // displayValue();
+      // Note that unlike variable hoisting, the whole function is moved to the top completely and we can call before it is declared.
+    </script>
+  </body>
+</html>

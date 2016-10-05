@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Hoisting Variables</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+      console.log(a);
+
+      var a = 1;
+      
+      // It prints out undefined. With hoisting(lifted and declared), the code above equals to below:
+      // var a;
+      // console.log(a);
+      
+      // var a = 1;
+      // var a was actually decalred with undefined value so undefeined was logged. Value of 1 
+      // assigned to 'a' after console.log performed.
+      // It is important to know that only variable declarations are hoisted to the top, not variable initialization or assignments 
+    </script>
+  </body>
+</html>

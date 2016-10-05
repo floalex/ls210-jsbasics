@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Passing Objects</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // What will the following code print and why? Don't run the code until you have tried to answer.
+      var a = [1, 2, 3];
+
+      function myValue(a) {
+        a[2] += 7;
+      }
+      
+      myValue(a);
+      console.log(a);
+      
+      // It prints out [1, 2, 10]. In JavaScript, objects(such as arrays) are stored as a reference and not the actual value. 
+      // When we reassigned and changed the value of a[2] in the function, the global var 'a' that was passed also reflected the 
+      // change since it and the local variable 'a' both point to the same refernce.
+      
+      // further explanation:
+      // if we add one more line:
+      // var anotherArr = a;
+      // console.log(anotherArr) logs out [1, 2, 10] after we call myValue(a);
+    </script>
+  </body>
+</html>
