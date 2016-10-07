@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Literal</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Read the code and identify the bug in it. Think about it first before running it.
+    var myObject = {
+      a: 'name',
+      'b': 'test',
+      123: 'c',
+      1: 'd'
+    };
+    
+    myObject[1];
+    myObject[a];
+    myObject.a;
+     
+    // myObject[a] will trigger ReferenceError.
+    // If we just want to access the 'a' key in myObject object using '[]', we need to call it with string format like myObject['a'].
+    // Note that we can access with numeric literal myObject[1]. This is becuase numeric value is coerced into string first.
+
+    </script>
+  </body>
+</html>

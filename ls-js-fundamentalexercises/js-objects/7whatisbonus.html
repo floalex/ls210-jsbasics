@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>What's my Bonus</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    //The function below takes an array as argument returns its average. The user of the function put in the statements below and was 
+    // expecting the function to return 5 to test it. What is the value returned? Can you explain why?
+    
+    function calculateBonus() {
+      return arguments[1] ? arguments[0] / 2 : 0;
+    }
+    
+    console.log(calculateBonus(2800, true));      // 1400
+    console.log(calculateBonus(1000, false));     // 0
+    console.log(calculateBonus(50000, true));     // 25000
+    
+    // In JavaScript, arguments object is a local variable available within all functions. We don't have to explicitely defined parameters.
+    // We can refer to a function's arguments within the function by using the arguments object, which contains an entry for each argument passed 
+    // to the function, the first entry's index starting at 0.
+    </script>
+  </body>
+</html>

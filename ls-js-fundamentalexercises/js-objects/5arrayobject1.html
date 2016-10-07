@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Object 1</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    //Read the code and tell what is logged out. Can you explain why this is the result?
+    
+    var myArray = ['a', 'b', 'c'];
+    console.log(myArray[0]);
+    console.log(myArray[-1]);
+    myArray[-1] = 'd';
+    myArray['e'] = 5;
+    myArray[3] = 'f';
+    
+    console.log(myArray[-1]);
+    console.log(myArray['e']);
+    console.log(myArray);
+    
+    // line12: 'a'
+    // line13: undefined
+    // line18: 'd'
+    // line19: 5
+    // line20: [ 'a', 'b', 'c', 'f', '-1': 'd', e: 5 ]
+     
+    // Due to the fact that all arrays are objects in JavaScript, the index -1 doesn't exist when we call it in line13, 
+    // thus it will log 'undefined'. In Arrays, the indexes are the keys of objects. Further, when we assign key as non positive
+    // integer like line14 and line15, the key names will be displayed.
+
+    </script>
+  </body>
+</html>

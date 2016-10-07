@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Object 1</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    //The function below takes an array as argument returns its average. The user of the function put in the statements below and was 
+    // expecting the function to return 5 to test it. What is the value returned? Can you explain why?
+    
+    var myArray = [5, 5];
+    myArray[-1] = 5;
+    myArray[-2] = 5;
+    function average(array) {
+      var sum = 0;
+      for (var i = -2; i < array.length; i++) {
+        sum += array[i];
+      }
+    
+      return sum / array.length;
+    }
+    
+    average(myArray);
+    
+    // Value 10 is returned from above code. The length of the array is 2 as myArray[-1] and myArray[-1] don't count in the array's length.
+    // so in line 21 the calculation 20 / 2 = 10 performed.
+    
+    // If we want the average function to return value 5, we can change the var i value to 0 and start summing up from the first value in the array.
+    
+    
+
+    </script>
+  </body>
+</html>

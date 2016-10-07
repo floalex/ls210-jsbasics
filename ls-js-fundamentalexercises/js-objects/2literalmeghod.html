@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Literal Method</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // A person created name object literal as seen in the code. The person used methods to return the first and last name of the person. 
+    // The person tried out the code. What was the result? Can you explain why?
+    
+    var name = {
+      first: function() {
+        return 'Victor';
+      },
+      last: function() {
+        return 'Reyes';
+      },
+    };
+    
+    console.log(name.first + ' ' + name.last);
+     
+    // The code will return as below and logs out undefined:
+    // function () {
+    //   return 'Victor';
+    //   } function () {
+    //   return 'Reyes';
+    // }
+    
+    // For methods in objects, we also need to call it with the appending paranthese()(name.first()) like we do for functions.  
+
+    </script>
+  </body>
+</html>
