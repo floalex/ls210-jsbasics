@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Concat</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function concat(array1, secondArgument) {
+        var newArray = array1; // since array1 always be array; if this is not the case, create a new empty array and copy each element over;
+        
+        if (Array.isArray(secondArgument)) {
+          for (var i = 0; i < secondArgument.length; i++) {
+            newArray.push(secondArgument[i]);
+          // alternatively: newArray[newArray.length] = secondArgument[i];
+          }
+        } else {
+          newArray.push(secondArgument);
+        }
+        
+        return newArray;
+      }
+      
+      
+      concat([1, 2, 3], [4, 5, 6]);            // [1, 2, 3, 4, 5, 6]
+      concat([1, 2], 3);                       // [1, 2, 3]
+      concat([2, 3], ['two', 'three']);        // [2, 3, "two", "three"]
+      concat([2, 3], 'four');                  // [2, 3, "four"]
+      
+      
+      var obj = { a: 2, b: 3 };
+      var newArray = concat([2, ,3], obj);     // [2, 3, { a: 2, b: 3 }]
+      obj.a = 'two';
+      newArray;                                // [2, 3, { a: 'two', b: 3 }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Copy 2</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // In the previous exercise, the value of the reference was being copied. Implement two(2) alternative ways of copying just the values and not the reference.
+      
+      // first way:
+      var myArray = [1, 2, 3, 4];
+      var myOtherArray = myArray.concat();
+           
+      myArray.pop();
+      console.log(myArray);
+      console.log(myOtherArray);    
+      
+      // second way:
+      var myArray2 = [1, 2, 3, 4];
+      var myOtherArray2 = myArray2.map(function(element) {
+        return element;
+      });
+
+      myArray2.pop();
+      console.log(myArray2);
+      console.log(myOtherArray2);    
+      
+      // other ways:
+      // var myOtherArray = myArray.slice(); or myArray.splice(0);
+    </script>
+  </body>
+</html>

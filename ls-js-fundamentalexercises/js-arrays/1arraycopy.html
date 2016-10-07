@@ -8,6 +8,7 @@
     <script>
     // Read through the code given below. What will be logged to the console at lines 5 and 8? Try thinking about what the results will be 
     // before trying out the code. Explain the results.
+      
       var myArray = [1, 2, 3, 4];
       var myOtherArray = myArray;
       
@@ -17,14 +18,15 @@
       myArray = [1, 2];
       console.log(myOtherArray);
       
-      // It prints out "Hello, world!". JavaScript also hoists functions declarations.
-      // The above code is actually equal to:
-      // function displayValue() {
-      //   console.log('Hello, world!');
-      // }
+      // Both two logs print out [1, 2, 3].
+      // If we add console.log(myArray) on top of each console.log(myOtherArray), we can better understand what happened:
     
-      // displayValue();
-      // Note that unlike variable hoisting, the whole function is moved to the top completely and we can call before it is declared.
+      // In JavaScript, objects(such as arrays) are stored as a reference and not the actual value. 
+      // We copied the myArry object to myOtherArry. But when we changed myArray with pop() function, 
+      // the change reflected on the myOtherArray.
+      
+      // Later, we reassign myArray to a different array [1, 2] with '='(reassignment operation) and now it points to a different reference.
+      // Thus myArray and myOtherArray have different references.  
     </script>
   </body>
 </html>
