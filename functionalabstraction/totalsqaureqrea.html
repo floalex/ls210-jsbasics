@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Total Square Area</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // For this exercise, we'll represent rectangles as Arrays with two elements: a height and a width.
+    
+    // Write a Function, totalArea, that takes an Array of rectangles as an argument. The Function should return the total area covered by all of the rectangles.
+    var rectangles = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
+    
+    function totalArea(rec) {
+      var sumArea = 0;
+      
+      rec.forEach(function(array) {
+        sumArea += array[0] * array[1];
+      });
+      
+      return sumArea;
+    }
+    
+    // suggested solution:
+    // function totalArea(rectangles) {
+    //   var areas = rectangles.map(function(rectangle) {
+    //     return rectangle[0] * rectangle[1];
+    //   });
+    
+    //   return areas.reduce(function(sum, area) {
+    //     return sum + area;
+    //   });
+    // }
+
+    console.log(totalArea(rectangles)); // 141  
+    
+    // Now, write a second Function, totalSquareArea. This Function should be like totalArea, except it should only count the area of a 
+    // rectangle if it is a square.
+    
+    var rectangles2 = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
+    
+    function totalSquareArea(rectangles) {
+      var filteredSquares = rectangles.filter(function(rectangle) {
+        return rectangle[0] === rectangle[1];
+      });
+    
+      var areas = filteredSquares.map(function(rectangle) {
+        return rectangle[0] * rectangle[1];
+      });
+      
+      return areas.reduce(function(sum, area) {
+        return sum + area;
+      });
+    }
+
+    console.log(totalSquareArea(rectangles2)); // 121
+    
+    
+    </script>    
+  </body>
+</html>
