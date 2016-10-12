@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Anagrams</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    var bands = [
+      { name: 'sunset rubdown', country: 'UK', active: false },
+      { name: 'women', country: 'Germany', active: false },
+      { name: 'a silver mt. zion', country: 'Spain', active: true },
+    ];
+    
+    var bands = [
+      { name: 'sunset rubdown', country: 'UK', active: false },
+      { name: 'women', country: 'Germany', active: false },
+      { name: 'a silver mt. zion', country: 'Spain', active: true },
+    ];
+    
+    function processBands(data) {
+      return data.map(function(objects) {
+        var capitalizedName = capitalizePhrase(objects.name);
+        var newBandName = removeDotsInString(capitalizedName);
+        
+        return {
+          name: newBandName,
+          country: 'Canada',
+          active: objects.active,
+        }
+      });
+    }
+    
+    function capitalizePhrase(phrase) {
+      var newPhrase = phrase.split(' ').map(function(word) {
+        return capitalizeString(word);
+      }).join(' ');
+      return newPhrase
+    }
+    
+    function capitalizeString(word) {
+      var initial = word[0].toUpperCase();
+      var rest = word.slice(1);
+      return initial + rest;
+    }
+    
+    function removeDotsInString(name) {
+      return name.replace('.', '');
+    }
+    
+    console.log(processBands(bands));
+    
+    // should return:
+    
+    // [ { name: 'Sunset Rubdown', country: 'Canada', active: false },
+    //   { name: 'Women', country: 'Canada', active: false },
+    //   { name: 'A Silver Mt Zion', country: 'Canada', active: true },
+    // ]
+    
+    </script>    
+  </body>
+</html>

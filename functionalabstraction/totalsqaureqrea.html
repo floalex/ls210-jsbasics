@@ -1,60 +1,157 @@
 <!doctype html>
 <html lang="en-US">
   <head>
-  <title>Total Square Area</title>
+  <title>Class Records Summary</title>
     <meta charset="UTF-8" />
   </head>
   <body>
     <script>
-    // For this exercise, we'll represent rectangles as Arrays with two elements: a height and a width.
+    var studentScores = {
+      student1: {
+        id: 123456789,
+        scores: {
+          exams: [90, 95, 100, 80],
+          exercises: [20, 15, 10, 19, 15],
+        },
+      },
+      student2: {
+        id: 123456799,
+        scores: {
+          exams: [50, 70, 90, 100],
+          exercises: [0, 15, 20, 15, 15],
+        },
+      },
+      student3: {
+        id: 123457789,
+        scores: {
+          exams: [88, 87, 88, 89],
+          exercises: [10, 20, 10, 19, 18],
+        },
+      },
+      student4: {
+        id: 112233445,
+        scores: {
+          exams: [100, 100, 100, 100],
+          exercises: [10, 15, 10, 10, 15],
+        },
+      },
+      student5: {
+        id: 112233446,
+        scores: {
+          exams: [50, 80, 60, 90],
+          exercises: [10, 0, 10, 10, 0],
+        },
+      },
+    };
     
-    // Write a Function, totalArea, that takes an Array of rectangles as an argument. The Function should return the total area covered by all of the rectangles.
-    var rectangles = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
-    
-    function totalArea(rec) {
-      var sumArea = 0;
-      
-      rec.forEach(function(array) {
-        sumArea += array[0] * array[1];
+    function generateClassRecordSummary(scores) {
+      // an array of score objects, with both exams and exercises
+      var scoreData = Object.keys(scores).map(function(student) {
+        return scores[student].scores;
       });
       
-      return sumArea;
+      // transform the above score objects to be an array of arrays for exam scores
+      var examData = scoreData.map(function(score) {
+        return score.exams;
+      });
+      
+      // return score format
+      return {
+        studentGrades: scoreData.map(function(scoreObject) {
+          return getStudentScore(scoreObject);
+        }),
+        exams: getExamSummary(examData),
+      }
+    };
+    
+    function getStudentScore(scoreObj) {
+      var lookupGrade = function(percentage) {
+        if (percentage >= 93) {
+          return 'A';
+        } else if (percentage < 93 && percentage >= 85) {
+          return 'B';
+        } else if (percentage < 85 && percentage >= 77) {
+          return 'C';
+        } else if (percentage < 77 && percentage >= 69) {
+          return 'D';
+        } else if (percentage < 69 && percentage >= 60) {
+          return 'E';
+        } else {
+          return 'F';
+        }
+      }
+      
+      var examAvg = computeExamAvg(scoreObj.exams);
+      var exerciseAvg = computeExercises(scoreObj.exercises);
+      var percentage = Math.round(examAvg * 0.65 + exerciseAvg * 0.35);
+      
+      return percentage + ' (' + lookupGrade(percentage) + ')';
     }
     
-    // suggested solution:
-    // function totalArea(rectangles) {
-    //   var areas = rectangles.map(function(rectangle) {
-    //     return rectangle[0] * rectangle[1];
-    //   });
+    function computeExamAvg(exams) {
+      return exams.reduce(function(total, exam) {
+        return total + exam;
+      }) / exams.length;
+    }
     
-    //   return areas.reduce(function(sum, area) {
-    //     return sum + area;
-    //   });
+    function computeExercises(exercises) {
+      return exercises.reduce(function(total, exercise) {
+        return total + exercise;
+      });
+    }
+    
+    function getExamSummary(examData) {
+      // get total scores for each exam
+      var scoresPerExam = transpose(examData);
+      
+      return scoresPerExam.map(function(scores) {
+        return {
+          average: getPerExamAvg(scores),
+          minimum: getPerExamMin(scores),
+          maximum: getPerExamMax(scores),
+        }
+      });
+    }
+    
+    function transpose(array) {
+      return array[0].map(function(col, colIndex) {
+        return array.map(function(row) {
+          return row[colIndex];
+        });
+      });
+    }
+    
+    function getPerExamAvg(scores) {
+      return scores.reduce(function(total, score) {
+        return total + score;
+      }) / scores.length;
+    }
+    
+    function getPerExamMin(scores) {
+      return scores.reduce(function(min, score) {
+        return min <= score ? min : score;
+      });
+    }
+    
+    function getPerExamMax(scores) {
+       return scores.reduce(function(max, score) {
+        return max >= score ? max : score;
+      });
+    }
+    
+    console.log(generateClassRecordSummary(studentScores));
+    
+    // returns:
+    
+    // {
+    //   studentGrades: [ '87 (B)', '73 (D)', '84 (C)', '86 (B)', '56 (F)' ],
+    //   exams: [
+    //     { average: 75.6, minimum: 50, maximum: 100 },
+    //     { average: 86.4, minimum: 70, maximum: 100 },
+    //     { average: 87.6, minimum: 60, maximum: 100 },
+    //     { average: 91.8, minimum: 80, maximum: 100 },
+    //   ],
     // }
-
-    console.log(totalArea(rectangles)); // 141  
-    
-    // Now, write a second Function, totalSquareArea. This Function should be like totalArea, except it should only count the area of a 
-    // rectangle if it is a square.
-    
-    var rectangles2 = [[3, 4], [6, 6], [1, 8], [9, 9], [2, 2]];
-    
-    function totalSquareArea(rectangles) {
-      var filteredSquares = rectangles.filter(function(rectangle) {
-        return rectangle[0] === rectangle[1];
-      });
-    
-      var areas = filteredSquares.map(function(rectangle) {
-        return rectangle[0] * rectangle[1];
-      });
-      
-      return areas.reduce(function(sum, area) {
-        return sum + area;
-      });
-    }
-
-    console.log(totalSquareArea(rectangles2)); // 121
-    
     
     </script>    
   </body>
