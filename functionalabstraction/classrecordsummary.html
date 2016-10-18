@@ -106,7 +106,7 @@
       
       return scoresPerExam.map(function(scores) {
         return {
-          average: getPerExamAvg(scores),
+          average: computeExamAvg(scores),
           minimum: getPerExamMin(scores),
           maximum: getPerExamMax(scores),
         }

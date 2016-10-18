@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Matching Parentheses</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Write a function that takes a string as argument, and returns true if the parentheses in the string are properly balanced, false 
+    // otherwise. To be properly balanced, parentheses must occur in matching "(" and ")" pairs.
+    
+    function isBalanced(string) {
+      var paransCount = 0;
+      
+      for (var i = 0; i < string.length; i++) {
+        if (string[i] === '(') {
+          paransCount++;
+        } else if (string[i] === ')') {
+          paransCount--;
+        }
+        
+        if (paransCount < 0) {
+          return false;
+        }
+      }
+      
+      return paransCount === 0;
+    }
+    
+    console.log(isBalanced('What (is) this?'));        // true
+    console.log(isBalanced('What is) this?'));         // false
+    console.log(isBalanced('What (is this?'));         // false
+    console.log(isBalanced('((What) (is this))?'));    // true
+    console.log(isBalanced('((What)) (is this))?'));   // false
+    console.log(isBalanced('Hey!'));                   // true
+    console.log(isBalanced(')Hey!('));                 // false
+    console.log(isBalanced('What ((is))) up('));       // false
+    </script>
+  </body>
+</html>
