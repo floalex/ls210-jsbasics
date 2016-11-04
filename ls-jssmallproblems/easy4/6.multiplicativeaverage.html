@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Multiplicative Average</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes an Array of integers as input, multiplies all of the numbers together, divides the result by the number 
+      // of entries in the Array, and then prints the result rounded to 3 decimal places.
+      
+      // multiply up all the values in the array
+      // dibide the result by the array's length, round it up to 3 digits
+      
+      function showMultiplicativeAverage(array) {
+        var multiplies = array.reduce(function(prev, curr) {
+          return prev * curr;
+        });
+        
+        return (multiplies / array.length).toFixed(3);
+      }
+           
+      console.log(showMultiplicativeAverage([3, 5]));                 // 7.500
+      console.log(showMultiplicativeAverage([2, 5, 7, 11, 13, 17]));  // 28361.667
+     
+    </script>
+    
+  </body>
+</html>

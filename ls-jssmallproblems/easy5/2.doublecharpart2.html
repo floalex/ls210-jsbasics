@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Double Char Part 2</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes a string, and returns a new string in which every consonant character is doubled. Vowels (a,e,i,o,u), digits, 
+      // punctuation, and whitespace should not be doubled.
+      
+      function doubleConsonants(string) {
+        var result = '';
+        
+        for (var i = 0; i < string.length; i++) {
+          if (string[i].match(/[b-df-hj-np-tv-z]/gi) ){
+            result += repeat(string[i], 2);
+          } else {
+            result += string[i];
+          }
+        }
+        
+        return result;
+      }
+      
+      function repeat(char, length) {
+        var newChar = '';
+        
+        for (var i = 0; i < length; i++) {
+          newChar += char;
+        }
+        
+        return newChar;
+      }
+      
+      // var CONSONANTS = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm',
+      //             'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+
+      // function doubleConsonants(string) {
+      //   var stringArray = [];
+      //   for (var i = 0; i < string.length; i++) {
+      //     stringArray.push(string[i]);
+      //     if (CONSONANTS.indexOf(string[i].toLowerCase()) >= 0) {
+      //       stringArray.push(string[i]);
+      //     }
+      //   }
+      
+      //   return stringArray.join('');
+      // }
+      
+      // function doubleConsonants(string) {
+      //   return string.replace(/([b-df-hj-np-tv-z])/gi, '$1$1');
+      // }  
+       
+      console.log(doubleConsonants('String'));       // "SSttrrinngg"
+      console.log(doubleConsonants('Hello-World!')); // "HHellllo-WWorrlldd!"
+      console.log(doubleConsonants('July 4th'));     // "JJullyy 4tthh"
+      console.log(doubleConsonants(''));            // ""    // ''
+    </script>
+  </body>
+</html>

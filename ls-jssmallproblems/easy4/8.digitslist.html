@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Digits List</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes one argument, a positive integer, and returns a list of the digits in the number.
+     
+      function digitList(numbers) {
+        return numbers.toString().split('').map(function(digit) {
+          return Number(digit);
+        });
+      }
+      
+      // function digitList(number) {
+      //   var numberStringArray = number.toString().split('');
+      //   var numberArray = [];
+      //   for (var i = 0; i < numberStringArray.length; i++) {
+      //     numberArray.push(parseInt(numberStringArray[i]));
+      //   }
+      
+      //   return numberArray;
+      // }
+                
+      console.log(digitList(12345));       // [1, 2, 3, 4, 5]
+      console.log(digitList(7));           // [7]
+      console.log(digitList(375290));      // [3, 7, 5, 2, 9, 0]
+      console.log(digitList(444));         // [4, 4, 4]
+     
+    </script>
+    
+  </body>
+</html>

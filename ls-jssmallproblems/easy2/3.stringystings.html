@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Stringy Strings</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Write a function that takes one argument, a positive integer, and returns a string of alternating 1s and 0s, always starting with 1. 
+    // The length of the string should match the given integer.
+    
+    // use loop to incrementally build up the result
+    // return a new string; starting from 1, odd position returns 1, even position returns 2
+    
+    function stringy(number) {
+      var result = '';
+      var i = 1;
+      
+      while ( i <= number) {
+        result += returnInteger(i);
+        i++;
+      }
+      
+      return result;
+    }
+    
+    function returnInteger(num) {
+      if (num % 2 === 0) {
+        return '0';
+      } else {
+        return '1';
+      }
+    }
+    
+    // function stringy(size) {
+    //     var result = '';
+    //     for (var i = 0; i < size; i++) {
+    //       if (i % 2 === 0) {
+    //         result += '1';
+    //       } else {
+    //         result += '0';
+    //       }
+    //     }
+      
+    //     return result;
+    // }
+    
+    console.log(stringy(6)); // '101010'
+    console.log(stringy(9)); // '101010101'
+    console.log(stringy(4)); // '1010'
+    console.log(stringy(7)); // '1010101'
+    </script>
+  </body>
+</html>
+    

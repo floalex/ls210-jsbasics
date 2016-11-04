@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>How Many</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that counts the number of occurrences of each element in a given array. Once counted, log each element alongside 
+      // the number of occurrences.
+      
+      // iterate through the array. In each iteration, assign the key and set the initial to 1; if the key already existed, increment the value
+      
+      function countOccurrences(array) {
+        var occurrences = {};
+        
+        array.forEach(function(value) {
+          if (occurrences[value]) {
+            occurrences[value] += 1;
+          } else {
+            occurrences[value] = 1;
+          }
+        });
+        
+        for (var prop in occurrences) {
+          console.log(prop + ' => ' + occurrences[prop]);
+        }
+      }
+      
+      // function countOccurrences(vehicles) {
+      //   var occurrences = {};
+      //   for (var i = 0; i < vehicles.length; i++) {
+      //     occurrences[vehicles[i]] = occurrences[vehicles[i]] || 0;
+      //     occurrences[vehicles[i]]++;
+      //   }
+      
+      //   displayOccurrences(occurrences);
+      // }
+      
+      // function displayOccurrences(occurrences) {
+      //   for (var item in occurrences) {
+      //     console.log(item + ' => ' + occurrences[item]);
+      //   }
+      // }
+     
+      var vehicles = ['car', 'car', 'truck', 'car', 'SUV', 'truck', 'motorcycle', 'motorcycle', 'car', 'truck'];
+      
+      countOccurrences(vehicles);
+      
+      // console output
+      // car => 4
+      // truck => 3
+      // SUV => 1
+      // motorcycle => 2
+     
+    </script>
+    
+  </body>
+</html>

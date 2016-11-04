@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Counting Up</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes an integer argument, and returns an Array of all integers, in sequence, between 1 and the argument. 
+      // You may assume that the argument will always be a valid integer that is greater than 0.
+      
+      function sequence(number) {
+        var array = [];
+        
+        for (var i = 1; i <= number; i++) {
+          array.push(i);
+        }
+        
+        return array;
+      }
+
+      console.log(sequence(5)); // [1, 2, 3, 4, 5]
+      console.log(sequence(3)); // [1, 2, 3]
+      console.log(sequence(1)); // [1]
+    </script>
+  </body>
+</html>

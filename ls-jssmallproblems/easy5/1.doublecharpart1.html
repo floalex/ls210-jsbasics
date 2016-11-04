@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Double Char Part 1</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes a string, and returns a new string in which every character is doubled.
+      
+      function repeater(string) {
+        var result = '';
+        
+        string.split('').forEach(function(char) {
+          result += repeat(char, 2);
+        });
+        
+        return result;
+      }
+      
+      function repeat(char, length) {
+        var newChar = '';
+        
+        for (var i = 0; i < length; i++) {
+          newChar += char;
+        }
+        
+        return newChar;
+      }
+      
+      // function repeater(string) {
+      //   var stringArray = [];
+      //   for (var i = 0; i < string.length; i++) {
+      //     stringArray.push(string[i], string[i]);
+      //   }
+      
+      //   return stringArray.join('');
+      // }
+       
+      console.log(repeater('Hello'));     // "HHeelllloo"
+      console.log(repeater("Good job!")); // "GGoooodd  jjoobb!!"
+      console.log(repeater(''));          // ''
+    </script>
+  </body>
+</html>

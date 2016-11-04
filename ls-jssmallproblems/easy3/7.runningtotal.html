@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Running Totals</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes an array of numbers, and returns an array with the same number of elements, and each element has 
+      // the running total from the original array.
+      
+      // transform the original array to a new array
+      // each new element is sum of the original element plus the element in the previous index
+      
+      function runningTotal(array) {
+        var sum = 0;
+        return array.map(function(value) {
+          return sum += value;
+        });
+      }
+      
+      // function runningTotal(array) {
+      //   var resultArray = [];
+      //   var sum = 0;
+      //   for (var i = 0; i < array.length; i++) {
+      //     resultArray.push(sum += array[i]);
+      //   }
+      
+      //   return resultArray;
+      // }
+      
+      console.log(runningTotal([2, 5, 13]));             // [2, 7, 20]
+      console.log(runningTotal([14, 11, 7, 15, 20]));    // [14, 25, 32, 47, 67]
+      console.log(runningTotal([3]));                    // [3]
+      console.log(runningTotal([]));                     // []
+
+    </script>
+    
+  </body>
+</html>

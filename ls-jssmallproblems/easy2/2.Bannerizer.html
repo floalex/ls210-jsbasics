@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Bannerizer</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Write a function that will take a short line of text, and print it within a box.
+    
+    function printInBox(string) {
+      var firstLastLine = '+' + repeatedChars('-', string.length + 2) + '+';
+      var stringLine = '| ' + string + ' |';
+      var emptyLine = '|' + repeatedChars(' ', string.length + 2) + '|';
+      
+      console.log(firstLastLine);
+      console.log(emptyLine);
+      console.log(stringLine);
+      console.log(emptyLine);
+      console.log(firstLastLine);
+    }
+    
+    function repeatedChars(char, length) {
+      var output = '';
+      
+      while (output.length < length) {
+        output += char;
+      }
+      
+      return output;
+    }
+    
+    console.log(printInBox('To boldly go where no one has gone before.'));
+    
+    // +--------------------------------------------+
+    // |                                            |
+    // | To boldly go where no one has gone before. |
+    // |                                            |
+    // +--------------------------------------------+
+    
+    console.log(printInBox(''));
+    // +--+
+    // |  |
+    // |  |
+    // |  |
+    // +--+
+    </script>
+  </body>
+</html>
+    

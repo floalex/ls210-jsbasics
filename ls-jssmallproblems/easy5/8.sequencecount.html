@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Sequence Count</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Create a function that takes two integers as arguments. The first argument is a count, and the second is the first number of a 
+      // sequence that your method will create. The method should return an Array that contains the same number of elements as the count 
+      // argument, while the values of each element will be multiples of the starting number.
+      
+      // You may assume that the count argument will always have a value of 0 or greater, while the starting number can be any integer value. 
+      // If the count is 0, an empty list should be returned.
+      
+      function sequence(count, number) {
+        var array = [];
+        
+        if (count === 0) {
+          return [];
+        }
+        
+        for (var i = 1; i <= count; i++) {
+          array.push(number * i);
+        }
+        
+        return array;
+      }
+      
+      // function sequence(count, firstNum) {
+      //   var result = [];
+      //   var sum = 0;
+      //   for (var i = 0; i < count; i++) {
+      //     result.push(sum += firstNum);
+      //   }
+      
+      //   return result;
+      // }
+            
+      console.log(sequence(5, 1));       // [1, 2, 3, 4, 5]
+      console.log(sequence(4, -7));      // [-7, -14, -21, -28]
+      console.log(sequence(3, 0));       // [0, 0, 0]
+      console.log(sequence(0, 1000000)); // []
+            
+    </script>
+  </body>
+</html>

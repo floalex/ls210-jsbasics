@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Array Average</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes one argument, an array containing integers, and returns the average of all numbers in the array. The array 
+      // will never be empty and the numbers will always be positive integers.
+      
+      function average(array) {
+        var sum = array.reduce(function(combine, int) {
+          return combine + int;
+        });
+        
+        return Math.floor(sum / array.length);
+      }
+       
+      console.log(average([1, 5, 87, 45, 8, 8]));    // 25
+      console.log(average([9, 47, 23, 95, 16, 52])); // 40
+    </script>
+    
+  </body>
+</html>

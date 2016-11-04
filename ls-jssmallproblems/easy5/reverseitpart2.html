@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Reverse It Part 2</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes one argument, a string containing one or more words, and returns the given string with all five or more 
+      // letter words reversed. Each string will consist of only letters and spaces. Spaces should be included only when more than one word is present.
+            
+      function reverseWords(string) {
+        var newString = [];
+        var stringArray = string.split(' ');
+        
+        for (var i = 0; i < stringArray.length; i++) {
+          if (stringArray[i].length >= 5) {
+            newString.push(stringArray[i].split('').reverse().join(''));
+          } else {
+            newString.push(stringArray[i]);
+          }
+        }
+        
+        return newString.join(' ');
+      }
+
+      console.log(reverseWords('Professional'));          // lanoisseforP
+      console.log(reverseWords('Walk around the block')); // Walk dnuora the kcolb
+      console.log(reverseWords('Launch School'));         // hcnuaL loohcS
+            
+    </script>
+  </body>
+</html>

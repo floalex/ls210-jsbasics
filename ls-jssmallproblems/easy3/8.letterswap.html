@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Letter Swap</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Given a string of words separated by spaces, write a function that takes this string of words and returns a string in which the first 
+      // and last letters of every word is swapped.
+      
+      // You may assume that every word contains at least one letter, and that the string will always contain at least one word. You may 
+      // also assume that each string contains nothing but words and spaces.
+      
+      // using space as separator, split the string into array
+      // iterate through the array, modify the words in the array
+      
+      function swap(string) {
+        var newString = string.split(' ');
+        
+        var resultArray = newString.map(function(word) {
+          if (word.length === 1 ) {
+            return word;
+          }
+          
+          return word[word.length - 1] + word.slice(1, -1) + word[0];
+        });
+        
+        return resultArray.join(' ');
+      }
+      
+      // function swap(words) {
+      //   var wordsArray = words.split(' ');
+      //   for (var i = 0; i < wordsArray.length; i++) {
+      //     wordsArray[i] = swapFirstLastCharacters(wordsArray[i]);
+      //   }
+      
+      //   return wordsArray.join(' ');
+      // }
+      
+      // function swapFirstLastCharacters(word) {
+      //   if (word.length == 1) {
+      //     return word;
+      //   }
+      
+      //   return word[word.length - 1] + word.slice(1, -1) + word[0];
+      // }
+      
+      console.log(swap('Oh what a wonderful day it is'));    // 'hO thaw a londerfuw yad ti si'
+      console.log(swap('Abcde'));                            // 'ebcdA'
+      console.log(swap('a'));                                // 'a'
+
+    </script>
+    
+  </body>
+</html>

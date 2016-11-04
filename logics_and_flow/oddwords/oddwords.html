@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Odd Numbers</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      function oddWords(string) {
+        var newString = string.split(' ').filter(function(element) {
+       	  return element !== '';
+        });
+
+        var result = [];
+    
+        for (var i = 0; i < newString.length; i++) {
+       	  if (newString[i] === '.') {
+       	    break;
+       	  } else {
+       	    console.log(newString[i]);
+       	  (newString.indexOf(newString[i]) % 2 === 1) ? result.push(reverse(newString[i])) : result.push(newString[i]);
+       	  } 
+        }
+    
+       return result.join(' ');	
+     }
+    
+     function reverse(string) {
+       return string.split('').reverse().join('');
+     }
+
+    oddWords('hello  word world .');
+    </script>
+  </body>
+</html>
