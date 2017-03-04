@@ -11,6 +11,7 @@
     // New centuries begin in years that end with 01. So, the years 1901-2000 comprise the 20th century.
     
     function century(year) {
+      // var canturyNum = Math.ceil(year/100);
       var centuryNum = Math.floor(year / 100) + 1;
       if (year % 100 === 0) {
         centuryNum -= 1;

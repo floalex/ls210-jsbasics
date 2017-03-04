@@ -58,7 +58,7 @@
       if (start === 0 && deleteCount === array.length) {          // avoid the repeat array if start is 0 but deleCount is defined;
         var tempArray = slice(array, 0);
       } else {
-        var tempArray = slice(array, 0, start);
+        tempArray = slice(array, 0, start);
       }
 
       for (var i = 0; i < tempArray.length; i++) {
