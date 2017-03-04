@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Lettercase Counter</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Write a function that takes a single String argument and returns a new string that contains the original value of the argument, but the 
+    // first letter of every word is now capitalized.
+    // You may assume that words are any sequence of non-blank characters, and that only the first character of each word must be considered.
+    
+    function wordCap(title) {
+      return title.split(' ').map(function(char) {
+        return char.slice(0, 1).toUpperCase() + char.slice(1).toLowerCase();
+      }).join(' ');
+    }
+   
+    console.log(wordCap('four score and seven'));    // 'Four Score And Seven'
+    console.log(wordCap('the javaScript language')); // 'The Javascript Language'
+    console.log(wordCap('this is a "quoted" word')); // 'This Is A "quoted" Word'
+
+    
+    </script>
+  </body>
+</html>
+    

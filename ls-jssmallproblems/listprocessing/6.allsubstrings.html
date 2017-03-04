@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>All Substrings</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+    // Write a method that returns a list of all substrings of a string. The returned list should be ordered by where in the string the substring 
+    // begins. This means that all substrings that start at position 0 should come first, then all substrings that start at position 1, and so on. 
+    // Since multiple substrings will occur at each position, the substrings at a given position should be returned in order from shortest to longest.
+    
+    // You may (and should) use the substringsAtStart function you wrote in the previous exercise:
+    
+    function substrings(text) {
+      var result = [];
+      
+      for (var i = 0; i < text.length; i++) {
+        var substr = text.slice(i);
+        result.push(substringsAtStart(substr));
+      }
+      
+      return result.reduce(function(a, b) {
+        return a.concat(b);
+      });
+    }
+    
+    function substringsAtStart(string) {
+      return string.split('').map(function(value, idx) {
+        return string.slice(0, idx + 1);
+      });
+    }
+    
+    // function substrings(string) {
+    //   return string.split('').map(function(char, idx) {
+    //     return substringsAtStart(string.substring(idx));
+    //   }).reduce(function(result, array) {
+    //     return result.concat(array);
+    //   });
+    // }
+    
+    console.log(substrings('abcde'));
+    // result
+    // [ 'a', 'ab', 'abc', 'abcd', 'abcde',
+    //   'b', 'bc', 'bcd', 'bcde',
+    //   'c', 'cd', 'cde',
+    //   'd', 'de',
+    //   'e' ]
+    </script>
+  </body>
+</html>
+    

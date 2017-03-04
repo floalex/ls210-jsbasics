@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Word to Digit</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes a sentence string as input and returns a new 
+      // string that contains the original string with any sequence of the words 'zero', 
+      // 'one','two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine' 
+      // converted to a string of digits.
+      
+      // use array
+      function wordToDigit(sentence) {
+        var numWords = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+        
+        var regExp = new RegExp(/(zero)|(one)|(two)|(three)|(four)|(five)|(six)|(seven)|(eight)|(nine)/, 'g');
+        sentence = sentence.replace(regExp, function(match) {
+          return numWords.indexOf(match);
+        });
+        return sentence;
+      }
+            
+      // use table look up
+      // function wordToDigit(sentence) {
+      //   var stringNumbers = {
+      //     'zero': 0,
+      //     'one': 1,
+      //     'two': 2,
+      //     'three': 3,
+      //     'four': 4,
+      //     'five': 5,
+      //     'six': 6,
+      //     'seven': 7,
+      //     'eight': 8,
+      //     'nine': 9,
+      //   };
+        
+      //   for (var word in stringNumbers) {
+      //     var regExp = new RegExp(word, 'g');
+      //     sentence = sentence.replace(regExp, stringNumbers[word]);
+      //   }
+        
+      //   // Object.keys(stringNumbers).forEach(function(word) {
+      //   //   var regExp = new RegExp(word, 'g');
+      //   //   sentence = sentence.replace(regExp, stringNumbers[word]);
+      //   // });
+        
+      //   return sentence;
+      // }
+      
+      console.log(wordToDigit('Please call me at five five five one two three four. Thanks.'));
+      //'Please call me at 5 5 5 1 2 3 4. Thanks.'
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Rotation Part 2</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that can rotate the last n digits of a number. For the 
+      // rotation, rotate 1 digit to the left and put the first digit to the right.
+      
+      function rotateRightmostDigits(number, n) {
+        var numberString = String(number);
+        var firstString = numberString.slice(0, numberString.length - n);
+        var secondString = numberString.slice(numberString.length - n);
+        var resultString = firstString + rotate(secondString);
+        
+        return Number(resultString);
+      }
+      
+      function rotate(string) {
+        return string.slice(1) + string[0];
+      }
+      
+      console.log(rotateRightmostDigits(735291, 1)); // 735291
+      console.log(rotateRightmostDigits(735291, 2)); // 735219
+      console.log(rotateRightmostDigits(735291, 3)); // 735912
+      console.log(rotateRightmostDigits(735291, 4)); // 732915
+      console.log(rotateRightmostDigits(735291, 5)); // 752913
+      console.log(rotateRightmostDigits(735291, 6)); // 352917
+    </script>
+  </body>
+</html>
