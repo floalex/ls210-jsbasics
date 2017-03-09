@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Fibonacci Numbers (Memoization)</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Our initial fibonacci solution that used recursion wasn't that efficient. 
+      // It may start to slow down already with an nth argument of 35. One way to 
+      // improve the performance of the recursive fibonacci function is to use memoization.
+      
+      // Memoization is an approach to saving a computed answer for possible reuse 
+      // at a later time rather than having to recompute it again. In the case of 
+      // the recursive fibonacci, it will save calls to fibonacci(nth - 2). 
+      // This is because the values needed for this will already be computed when 
+      // the recursive calls were done for fibonacci(nth - 1).
+      // Refactor the recursive fibonacci to use memoization.
+      
+      // Hint: One approach to memoization is to use a lookup table of previously 
+      // computed values. This could be an object.
+      
+      var fibonacci = (function(nth) {
+        var memo = {};
+        
+        return function(nth) {
+          if (nth <= 2) {
+            return 1;
+          } else {
+            if (memo[nth]) {
+              return memo[nth];
+            } else {
+              memo[nth] = fibonacci(nth - 1) + fibonacci(nth - 2);
+              return memo[nth];
+            }
+          }
+        };
+      })();
+      
+      // recursive
+      // function fibonacci(nth) {
+      //   if (nth <= 2) {
+      //     return 1;
+      //   } else {
+      //     return fibonacci(nth - 1) + fibonacci(nth - 2);
+      //   }
+      // }
+      
+      console.log(fibonacci(20));  // 6765
+      console.log(fibonacci(50));   // 12586269025
+      console.log(fibonacci(100));  // 354224848179261915075
+    </script>
+  </body>
+</html>

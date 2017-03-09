@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Fibonacci Numbers (Procedural)</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Rewrite your recursive fibonacci function so that it computes its results without recursion.
+      
+      function fibonacci(nth) {
+        var starting_array = [1, 1];
+        for (var i = 3; i <= nth; i++) {
+          starting_array = [starting_array[1], starting_array[0] + starting_array[1]];
+        }
+        
+        return starting_array[1];
+      }
+      
+      // recursive
+      // function fibonacci(nth) {
+      //   if (nth <= 2) {
+      //     return 1;
+      //   } else {
+      //     return fibonacci(nth - 1) + fibonacci(nth - 2);
+      //   }
+      // }
+      
+      console.log(fibonacci(20));  // 6765
+      console.log(fibonacci(50));   // 12586269025
+      console.log(fibonacci(100));  // 354224848179261915075
+    </script>
+  </body>
+</html>

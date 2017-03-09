@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Madlibs Revisited</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Make a madlibs program that takes a text template as input, and then plugs 
+      // in a selection of randomized nouns, verbs, adjectives, and adverbs into that 
+      // text and prints it. You can build your lists of nouns, verbs, adjectives, 
+      // and adverbs directly into your program. Your program should read this text, 
+      // and for each line, it should place random words of the appropriate types 
+      // into the text, and print the result.
+
+      // The challenge of this program isn't just about writing your solution; it's 
+      // about choosing the structure of the text template. Choose the right way to 
+      // structure your template, and this problem becomes a whole lot easier. 
+      // Consequently, this exercise is a bit more open ended since the input is 
+      // also something that you will be defining.
+      
+      // To find the words, there has to be identifiers that denote its start and end. 
+      // These identifiers also have to be unique enough that the function won't 
+      // mistake normal text as a "token" to replace
+      
+      var template1 = 'The ${adjective} brown ${noun} ${adverb} ' +
+                '${verb} the ${adjective} yellow ' +
+                '${noun}, who ${adverb} ${verb} his ' +
+                '${noun} and looks around.';
+
+      var template2 = 'The ${noun} ${verb} the ${noun}\'s ${noun}.';
+      
+      function madlibs(template) {
+        var REPLACEMENT_TEXTS = {
+          adjective: ['quick', 'lazy', 'sleepy', 'noisy', 'hungry'],
+          noun: ['fox', 'dog', 'head', 'leg', 'tail'],
+          verb: ['jumps', 'lifts', 'bites', 'licks', 'pats'],
+          adverb: ['easily', 'lazily', 'noisily', 'excitedly'],
+        };
+        
+        function replaceText(match) {
+          var key = match.replace(/[^a-z]/g, "");
+          var index = Math.floor(Math.random() * REPLACEMENT_TEXTS[key].length);
+          return REPLACEMENT_TEXTS[key][index];
+        }
+        
+        return template.replace(/\${[a-z]+}/g, replaceText);
+      }
+      
+      // Here are sample runs with the following list of texts:
+      // adjectives: quick lazy sleepy noisy hungry
+      // nouns: fox dog head leg tail
+      // verbs: jumps lifts bites licks pats
+      // adverb: easily lazily noisily excitedly
+      // ---
+      
+      console.log(madlibs(template1));
+      
+      // The "sleepy" brown "cat" "noisily"
+      // "licks" the "sleepy" yellow
+      // "dog", who "lazily" "licks" his
+      // "tail" and looks around.
+      
+      console.log(madlibs(template1));
+      
+      // The "hungry" brown "cat" "lazily"
+      // "licks" the "noisy" yellow
+      // "dog", who "lazily" "licks" his
+      // "leg" and looks around.
+      
+      console.log(madlibs(template2));
+      
+      // The "fox" "bites" the "dog"'s "tail".
+      
+      console.log(madlibs(template2));
+      
+      // The "cat" "pats" the "cat"'s "head".
+    </script>
+  </body>
+</html>

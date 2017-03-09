@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Unlucky Days</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that returns the number of Friday the 13ths in the year 
+      // passed in as an argument. You may assume that the year is greater than 
+      // 1752 (when the modern Gregorian Calendar was adopted by the United Kingdom), 
+      // and you may assume that the same calendar will remain in use for the foreseeable future.
+      
+      function fridayThe13ths(year) {
+        var thirteenths = [];
+        for (var i = 0; i < 12; i++) {
+          thirteenths.push(new Date(year, i, 13));
+        }
+        
+        return thirteenths.reduce(function(count, day) {
+          return day.getDay() === 5 ? count += 1 : count += 0;
+        }, 0);
+      }
+          
+      console.log(fridayThe13ths(2015)); // 3
+      console.log(fridayThe13ths(1986)); // 1
+      
+      //  Here's one algorithm for solving the problem:
+
+      // Iterate over all the months in the given year.
+      // For each month, get the day that falls on the 13.
+      // Count the 13s that fall on a Friday.
+      // Return the count.
+    </script>
+  </body>
+</html>
