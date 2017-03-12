@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Transpose 3x3</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Write a function that takes a 3 x 3 matrix in Array of Arrays format and 
+      // returns the transpose of the original matrix. Your task is to do this 
+      // yourself don't use external libraries.
+
+      // Take care not to modify the original matrix: you must produce a new matrix 
+      // and leave the original matrix unchanged.
+      
+      function transpose(array) {
+        return array[0].map(function(col, colIndex) {
+          return array.map(function(row) {
+            // console.log(row[colIndex]);
+            return row[colIndex];
+          });
+        });
+      }
+      
+      // function transpose(matrix) {
+      //   var transposed = [];
+      //   var newRowsCount = matrix[0].length;
+        
+      //   for (var i = 0; i < newRowsCount; i++) {
+      //     transposed.push([]);
+      //   }
+        
+      //   for (var row = 0; row < matrix.length; row++) {
+      //     for (var col = 0; col < matrix[row].length; col++) {
+      //       transposed[col].push(matrix[row][col]);
+      //     }
+      //   }
+        
+      //   return transposed;
+      // }
+      
+      var matrix = [
+        [1, 5, 8],
+        [4, 7, 2],
+        [3, 9, 6]
+      ];
+      
+      var newMatrix = transpose(matrix);
+      
+      console.log(newMatrix); // [[1, 4, 3], [5, 7, 9], [8, 2, 6]]
+      console.log(matrix);    // [[1, 5, 8], [4, 7, 2], [3, 9, 6]]
+    </script>
+  </body>
+</html>

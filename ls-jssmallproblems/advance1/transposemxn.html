@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Transpose MxN</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // Matrix transposes aren't limited to 3 x 3 matrices, or even square matrices. 
+      // Any matrix can be transposed by simply switching columns with rows.
+
+      // Modify your transpose function from the previous exercise so it works 
+      // with any matrix with at least 1 row and 1 column.
+      
+      function transpose(array) {
+        return array[0].map(function(col, colIndex) {
+          return array.map(function(row) {
+            return row[colIndex];
+          });
+        });
+      }
+      
+      // function transpose(matrix) {
+      //   var transposed = [];
+      //   var newRowsCount = matrix[0].length;
+        
+      //   for (var i = 0; i < newRowsCount; i++) {
+      //     transposed.push([]);
+      //   }
+        
+      //   for (var row = 0; row < matrix.length; row++) {
+      //     for (var col = 0; col < matrix[row].length; col++) {
+      //       transposed[col].push(matrix[row][col]);
+      //     }
+      //   }
+        
+      //   return transposed;
+      // }
+      
+      
+      console.log(transpose([[1, 2, 3, 4]]));       // [[1], [2], [3], [4]]
+      console.log(transpose([[1], [2], [3], [4]])); // [[1, 2, 3, 4]]
+      console.log(transpose([[1]]));                // [[1]]
+      console.log(transpose([[1, 2, 3, 4, 5], [4, 3, 2, 1, 0], [3, 7, 8, 6, 2]]));
+      // [[1, 4, 3], [2, 3, 7], [3, 2, 8], [4, 1, 6], [5, 0, 2]]
+    </script>
+  </body>
+</html>

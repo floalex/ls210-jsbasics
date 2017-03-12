@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+  <title>Transpose MxN</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // A 90-degree rotation of a matrix produces a new matrix in which each 
+      // side of the matrix is rotated clockwise by 90 degrees.
+      // Write a function that takes an arbitrary matrix and rotates it 90 degrees 
+      // clockwise as shown above.
+      
+      function rotate90(matrix) {
+        var newMatrix = [];
+        var newRowCount = matrix[0].length;
+        
+        for (var i = 0; i < newRowCount; i++) {
+          newMatrix.push([]);
+        }
+        
+        for (var row = matrix.length - 1; row >=0; row--){
+          for (var col = 0; col < matrix[row].length; col++) {
+            newMatrix[col].push(matrix[row][col]);
+          }
+        }
+        
+        return newMatrix;
+      }
+      
+      // function rotate90(matrix) {
+      //   var rotated = [];
+      //   var newRowsCount = matrix[0].length;
+      
+      //   for (var row = 0; row < newRowsCount; row++) {
+      //     rotated.push([]);
+      //   }
+      
+      //   for (var row = 0, rows = matrix.length; row < rows; row++) {
+      //     for (var col = 0, cols = matrix[row].length; col < cols; col++) {
+      //       rotated[col].push(matrix[row][col]);
+      //     }
+      //   }
+      
+      //   for (var row = 0; row < newRowsCount; row++) {
+      //     rotated[row].reverse();
+      //   }
+      
+      //   return rotated;
+      // }
+      
+      var matrix1 = [
+        [1, 5, 8],
+        [4, 7, 2],
+        [3, 9, 6]
+      ]
+      
+      var matrix2 = [
+        [3, 7, 4, 2],
+        [5, 1, 0, 8]
+      ]
+      
+      var newMatrix1 = rotate90(matrix1);
+      var newMatrix2 = rotate90(matrix2);
+      var newMatrix3 = rotate90(rotate90(rotate90(rotate90(matrix2))));
+      
+      console.log(newMatrix1); // [[3, 4, 1], [9, 7, 5], [6, 2, 8]]
+      console.log(newMatrix2); // [[5, 3], [1, 7], [0, 4], [8, 2]]
+      console.log(newMatrix3); // matrix2
+    </script>
+  </body>
+</html>

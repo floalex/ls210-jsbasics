@@ -5,6 +5,17 @@
     <meta charset="UTF-8" />
   </head>
   <body>
-    <script src="printmultiples.js"></script>
+    <script>
+      function printMultiples(number) {
+        for (var i = 100; i >= number; i--) {
+          if (i % number === 0 && i % 2 === 1) {
+            console.log(i);
+          }
+        }
+      }
+      
+      console.log(printMultiples(17));
+      console.log(printMultiples(21));
+    </script>
   </body>
 </html>
