@@ -23,8 +23,32 @@
       // [[[9], [5]], [[7], [1]]] ->
       // [[5, 9], [1, 7]] ->
       // [1, 5, 7, 9]
-            
       
+      function mergeSort(array) {
+        if (array.length === 1) {
+          return array;
+        }
+        
+        var subArray1 = array.slice(0, array.length / 2);
+        var subArray2 = array.slice(array.length / 2);
+        
+        subArray1 = mergeSort(subArray1);
+        subArray2 = mergeSort(subArray2);
+        
+        return merge(subArray1, subArray2);
+      }
+            
+       function merge(array1, array2) {
+        var copy1 = array1.slice();
+        var copy2 = array2.slice();
+        var result = [];
+        
+        while (copy1.length > 0 && copy2.length > 0) {
+          result.push(copy1[0] <= copy2[0] ? copy1.shift() : copy2.shift());
+        }
+        
+        return result.concat(copy1.length === 0 ? copy2 : copy1);
+      }
       
       console.log(mergeSort([9, 5, 7, 1]));                // [1, 5, 7, 9]
       console.log(mergeSort([5, 3]));                      // [3, 5]
